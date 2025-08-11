@@ -1,0 +1,222 @@
+<!doctype html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programs — The Unique School Sadaat Chapter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #222;
+      --primary: #003C8F;
+      --accent-2: #0066d6;
+      --shadow: 0 6px 20px rgba(0,0,0,0.1);
+      --glass: rgba(255,255,255,0.8);
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAVIGATION */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .logo .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-2));
+      color: white;
+      font-size: 1.4rem;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    nav.nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+
+    nav.nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--primary);
+      position: relative;
+      padding-bottom: 4px;
+      white-space: nowrap;
+    }
+
+    nav.nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-2);
+      transition: width 0.3s ease;
+    }
+
+    nav.nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Content styles */
+    h1 {
+      color: var(--primary);
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+
+    .group {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .group h2 {
+      margin: 0 0 10px;
+      color: #331c9e;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      padding: 6px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      padding: 12px 0;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+      nav.nav {
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+      /* Gradient Animation for logo text */
+body,html, .container {
+  background: linear-gradient(270deg, #4b2abf, #f85fb0, #4b2abf);
+  background-size: 600% 600%;
+ 
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="mark">U</div>
+    The Unique School Sadaat Chapter
+  </div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="program.html">Programs</a>
+    <a href="admission.html">Admission</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Programs Offered (Punjab Board)</h1>
+
+  <div class="group">
+    <h2>Matric / Secondary</h2>
+    <ul>
+      <li>Compulsory: Urdu, English, Islamiyat, Pakistan Studies, Mathematics</li>
+      <li>Electives: Physics, Chemistry, Biology, Computer Science, General Science</li>
+    </ul>
+  </div>
+
+  <div class="group">
+    <h2>Intermediate / Higher Secondary</h2>
+    <ul>
+      <li>Pre-Medical (Biology, Chemistry, Physics)</li>
+      <li>Pre-Engineering (Mathematics, Physics, Chemistry)</li>
+      <li>ICS (Computer Science + Mathematics / Statistics)</li>
+      <li>I.Com (Commerce)</li>
+      <li>Humanities / General Science (Arts subjects as electives)</li>
+    </ul>
+  </div>
+
+  <div class="group">
+    <h2>Other Programs</h2>
+    <ul>
+      <li>Technical/Vocational (if available — like diploma in IT, nursing, etc.)</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 The Unique School Sadaat Chapter
+</footer>
+
+</body>
+</html>

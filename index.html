@@ -1,0 +1,304 @@
+<!doctype html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Unique School Sadaat Chapter — Prototype</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0b1220;
+      --muted: #55606a;
+      --primary: #003C8F;
+      --accent: #D4AF37;
+      --card-bg: #ffffff;
+      --glass: rgba(255,255,255,0.6);
+      --cta-text: #003C8F;
+      --shadow: 0 6px 18px rgba(2,10,28,0.08);
+      --accent-2: #0066d6;
+    }
+
+    /* Vice Elegance Theme */
+    .vice-elegance {
+      --bg: #0a0618;
+      --text: #f5f4fb;
+      --muted: #b9b2d9;
+      --primary: #4b2abf;
+      --accent: #f85fb0;
+      --card-bg: rgba(255,255,255,0.05);
+      --glass: rgba(255,255,255,0.06);
+      --cta-text: #0b0b0b;
+      --shadow: 0 12px 30px rgba(0,0,0,0.7);
+      --accent-2: #19e0b4;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      padding-bottom: 80px;
+      transition: background 0.5s ease, color 0.5s ease;
+      background: linear-gradient(270deg, #ff00cc, #333399, #19e0b4, #ffcc00, #ff5f6d, #4b2abf);
+      background-size: 1200% 1200%;
+      animation: gta6Gradient 15s ease infinite;
+    }
+
+    @keyframes gta6Gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;  /* Fix mobile wrapping */
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .logo .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-2));
+      color: white;
+      font-size: 1.2rem;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--text);
+      position: relative;
+      padding-bottom: 4px;
+      white-space: nowrap;
+    }
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-2);
+      transition: width 0.3s ease;
+    }
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      color: white;
+    }
+    .btn.secondary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 16px;
+      text-align: center;
+      background: linear-gradient(120deg, var(--primary), var(--accent-2));
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
+      color: white;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 16px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      margin: 10px 0 6px 0;
+      color: var(--primary);
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--glass);
+      backdrop-filter: blur(6px);
+      padding: 14px;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Brilliant Sparkling Text */
+    .st {
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #fff7b2,
+        #ffe066,
+        #ffb347,
+        #ff66b3,
+        #ffffff
+      );
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: colorShift 8s ease infinite, sparkle 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes colorShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+   
+
+    /* Responsive Fixes */
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+      .nav {
+        justify-content: center;
+        gap: 8px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark">U</div>
+      The Unique School Sadaat Chapter
+    </div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="program.html">Programs</a>
+      <a href="admission.html">Admission</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn secondary theme-toggle" onclick="toggleTheme()">Vice Elegance</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 class="st">Welcome to The Unique School Sadaat Chapter</h1>
+    <p class="st">Your gateway to quality education and endless opportunities. We are here to shape a better tomorrow for you.</p>
+    <button class="btn primary">Get Started</button>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3 class="st">Science</h3>
+      <p class="st">Explore the wonders of the universe through interactive science classes.</p>
+    </div>
+    <div class="card">
+      <h3 class="st">Mathematics</h3>
+      <p class="st">Master numbers, equations, and problem-solving skills.</p>
+    </div>
+    <div class="card">
+      <h3 class="st">Arts</h3>
+      <p class="st">Unleash your creativity with painting, music, and more.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 The Unique School Sadaat Chapter. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('vice-elegance');
+    }
+  </script>
+</body>
+</html>

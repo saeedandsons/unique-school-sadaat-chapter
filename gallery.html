@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gallery — The Unique School Sadaat Chapter</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f5f5f5;
+    --text: #222;
+    --primary: #003C8F;
+    --accent-2: #0066d6;
+    --shadow: 0 6px 20px rgba(0,0,0,0.1);
+    --glass: rgba(255,255,255,0.8);
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* NAVIGATION */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 100;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+
+  .logo .mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--accent-2));
+    color: white;
+    font-size: 1.4rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  nav.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  nav.nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 4px;
+    white-space: nowrap;
+  }
+
+  nav.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-2);
+    transition: width 0.3s ease;
+  }
+
+  nav.nav a:hover::after {
+    width: 100%;
+  }
+
+  /* Gallery styles */
+  .gallery {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: auto;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    cursor: pointer;
+    background: #ddd;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    display: block;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(80%);
+  }
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s ease;
+  }
+  .gallery-item:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header {
+      justify-content: center;
+    }
+    nav.nav {
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+    /* Gradient Animation for logo text */
+body,html, .container {
+  background: linear-gradient(270deg, #4b2abf, #f85fb0, #4b2abf);
+  background-size: 600% 600%;
+ 
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="mark">U</div>
+    The Unique School Sadaat Chapter
+  </div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="program.html">Programs</a>
+    <a href="admission.html">Admission</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=1&school" alt="Annual Sports Day" />
+    <div class="caption">Annual Sports Day</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=2&students" alt="Science Exhibition" />
+    <div class="caption">Science Exhibition</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=3&library" alt="Library Inauguration" />
+    <div class="caption">Library Inauguration</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=4&sports" alt="Inter-school Tournament" />
+    <div class="caption">Inter-school Tournament</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=5&art" alt="Art & Craft Day" />
+    <div class="caption">Art & Craft Day</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=6&music" alt="Music Concert" />
+    <div class="caption">Music Concert</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=7&classroom" alt="Classroom Activities" />
+    <div class="caption">Classroom Activities</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=8&computer" alt="Computer Lab" />
+    <div class="caption">Computer Lab</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=9&science" alt="Science Lab" />
+    <div class="caption">Science Lab</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=10&playground" alt="Playground Fun" />
+    <div class="caption">Playground Fun</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=11&reading" alt="Reading Hour" />
+    <div class="caption">Reading Hour</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=12&painting" alt="Painting Competition" />
+    <div class="caption">Painting Competition</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=13&debate" alt="Debate Contest" />
+    <div class="caption">Debate Contest</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=14&trip" alt="Educational Trip" />
+    <div class="caption">Educational Trip</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=15&exam" alt="Examination Day" />
+    <div class="caption">Examination Day</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=16&festival" alt="Cultural Festival" />
+    <div class="caption">Cultural Festival</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=17&seminar" alt="Student Seminar" />
+    <div class="caption">Student Seminar</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=18&celebration" alt="School Celebration" />
+    <div class="caption">School Celebration</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=19&achievement" alt="Prize Distribution" />
+    <div class="caption">Prize Distribution</div>
+  </div>
+  <div class="gallery-item">
+    <img src="https://source.unsplash.com/random/600x400?sig=20&farewell" alt="Farewell Party" />
+    <div class="caption">Farewell Party</div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 The Unique School Sadaat Chapter — All rights reserved.
+</footer>
+
+</body>
+</html>

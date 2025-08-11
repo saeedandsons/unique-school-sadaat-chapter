@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — The Unique School Sadaat Chapter</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f5f5f5;
+    --text: #222;
+    --primary: #003C8F;
+    --accent-2: #0066d6;
+    --shadow: 0 6px 20px rgba(0,0,0,0.1);
+    --glass: rgba(255,255,255,0.8);
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  /* NAVIGATION */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 100;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+
+  .logo .mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--accent-2));
+    color: white;
+    font-size: 1.4rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  nav.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  nav.nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 4px;
+    white-space: nowrap;
+  }
+
+  nav.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-2);
+    transition: width 0.3s ease;
+  }
+
+  nav.nav a:hover::after {
+    width: 100%;
+  }
+
+  /* Container for contact */
+  .container {
+    max-width: 900px;
+    margin: 40px auto 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+
+  h2 {
+    margin-top: 0;
+    color: var(--primary);
+  }
+
+  .contact-info a {
+    display: block;
+    margin: 8px 0;
+    color: var(--accent-2);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  .map {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  footer {
+    margin-top: 40px;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header {
+      justify-content: center;
+    }
+    nav.nav {
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+  /* Gradient Animation for logo text */
+body,html, .container {
+  background: linear-gradient(270deg, #4b2abf, #f85fb0, #4b2abf);
+  background-size: 600% 600%;
+ 
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="mark">U</div>
+    The Unique School Sadaat Chapter
+  </div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="program.html">Programs</a>
+    <a href="admission.html">Admission</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Principal: Rehmatullah</h2>
+  <div class="contact-info">
+    <a href="https://wa.me/923258575790" target="_blank">📱 WhatsApp: 0325 8575790</a>
+    <a href="mailto:yourgmail@gmail.com" target="_blank">📧 Email: yourgmail@gmail.com</a>
+    <a href="https://facebook.com/yourpage" target="_blank">📘 Facebook Page</a>
+    <a href="https://youtube.com/yourchannel" target="_blank">▶️ YouTube Channel</a>
+  </div>
+
+  <div class="map">
+    <iframe 
+      src="https://www.google.com/maps?q=Saddaat%20Town%20Lahore&output=embed" 
+      width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 The Unique School Sadaat Chapter — All rights reserved.
+</footer>
+
+</body>
+</html>
